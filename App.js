@@ -12,8 +12,10 @@ import Setting from './SessionTime/Profile/Setting';
 import Logout from './SessionTime/Profile/logout';
 import Profiledetail from './SessionTime/Profile/Profiledetail';
 
+//refreshtoken
 
-
+import Login from './Src/Refreshtoken/Login';
+import Homepage from './Src/Refreshtoken/Homepage';
 
 import { NavigationContainer, } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -23,12 +25,16 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const Stack = createNativeStackNavigator();
 var array = [];
+export const navigationRef = React.createRef();
 
 const App = () => {
 
 
-  const navigationRef = useRef();
+  //const navigationRef = useRef();
   const routeNameRef = useRef();
+  // export const navigationRef = React.createRef();
+
+
 
   return (
     <NavigationContainer ref={navigationRef}
@@ -67,6 +73,21 @@ const App = () => {
       <Stack.Navigator screenOptions={{
         headerShown: false
       }}>
+
+
+
+
+        {/* =====================Refreshtoken with axios interceptors set as login page as initial route =================*/}
+        <Stack.Screen name='Login' component={Login} />
+        <Stack.Screen name='Homepage' component={Homepage} />
+
+
+
+
+
+
+        {/* =====================SessionTime Calcualte set us main page as initial route  =================*/}
+
         <Stack.Screen
           name="Main"
           component={Main}
@@ -81,6 +102,10 @@ const App = () => {
         <Stack.Screen name='Logout' component={Logout} />
         <Stack.Screen name='Setting' component={Setting} />
         <Stack.Screen name='Profiledetail' component={Profiledetail} />
+
+
+
+
 
       </Stack.Navigator>
     </NavigationContainer>
