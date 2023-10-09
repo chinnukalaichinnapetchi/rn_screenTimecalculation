@@ -1,7 +1,7 @@
 import axios from "axios";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { Alert } from "react-native";
-import { navigationRef } from "../App";
+import { navigationRef } from "../../App";
 
 //<===========Server url localhost============>
 //var baseurl = 'http://127.0.0.1:3000/api/users/'

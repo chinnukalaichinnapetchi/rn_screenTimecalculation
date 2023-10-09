@@ -77,7 +77,8 @@ const App = () => {
 
 
 
-        {/* =====================Refreshtoken with axios interceptors set as login page as initial route =================*/}
+        {/* =====================Refreshtoken with axios interceptors set as login page as initial route {login id-> email :abc@gmail.com, password:abc@123} =================*/}
+
         <Stack.Screen name='Login' component={Login} />
         <Stack.Screen name='Homepage' component={Homepage} />
 
